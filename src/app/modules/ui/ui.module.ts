@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MaterialModule } from './material.module';
 import { HeaderComponent } from './layout/header.component';
 import { FooterComponent } from './layout/footer.component';
+import { RouterModule } from '@angular/router';
 
 const LAYOUT_COMPONENTS = [  
   HeaderComponent,
@@ -15,7 +16,8 @@ const LAYOUT_COMPONENTS = [
   ],
   imports: [
     CommonModule, 
-    MaterialModule
+    MaterialModule, 
+    RouterModule
   ], 
   exports: [
     MaterialModule, 

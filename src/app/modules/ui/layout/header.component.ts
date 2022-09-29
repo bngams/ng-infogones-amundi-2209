@@ -13,6 +13,15 @@ import { Component, OnInit } from '@angular/core';
       <span>My Application</span>
       <!-- flex spacer -->
       <div class="spacer"></div>
+      <!-- menu -->
+      <nav>
+        <ul>
+          <li class="menu-item"><a [routerLink]="['/home']" routerLinkActive="active">Home</a></li>
+          <li class="menu-item"><a routerLink="/get-started" routerLinkActive="active">Get Started</a></li>
+          <li class="menu-item"><a routerLink="/products" routerLinkActive="active">Products</a></li>
+          <li class="menu-item"><a routerLink="/cart" routerLinkActive="active">Cart</a></li>
+        </ul>
+      </nav>
       <!-- iconne login -->
       <mat-icon aria-hidden="false" aria-label="login" fontIcon="login">login</mat-icon>
       <!-- iconne logout -->
@@ -22,6 +31,26 @@ import { Component, OnInit } from '@angular/core';
   styles: [`
     .spacer {
       flex: 1;
+    }
+
+    ul {
+      list-style-type: none;
+      display: flex;
+    }
+
+    .menu-item {
+      margin: 0 15px;
+      color: #FFF;
+    }
+
+    .menu-item a{
+      color: #FFF;
+      text-decoration: none;
+    }
+
+    .menu-item .active {
+        font-weight: bolder;
+        text-decoration: underline;
     }
   `]
 })
