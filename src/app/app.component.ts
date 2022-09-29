@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 
 type Picture = {
   url:string;
@@ -23,12 +23,17 @@ export class AppComponent {
     'world',
     '!'
   ];
+  iconBgColor = "black"
 
   buttonClicked(): void {
     console.log('Button clicked!');
   }
 
   toggleButtonStatus(): void {
-    this.buttonDisabled = !this.buttonDisabled; 
+    this.buttonDisabled = !this.buttonDisabled;
+  }
+
+  receiveTemplateVar(myH2Title: HTMLHeadingElement): void {
+    console.log()
   }
 }
