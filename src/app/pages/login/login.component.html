@@ -1,0 +1,13 @@
+<form #form="ngForm" (ngSubmit)="submit()">
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Email</mat-label>
+    <input matInput placeholder="Your email" name="email" #emailInput="ngModel" [(ngModel)]="credentials.email" required>
+  </mat-form-field>
+  <!-- elvis operator -->
+  <span *ngIf="emailInput.errors">Email is required</span>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Password</mat-label>
+    <input matInput type="password" placeholder="Your password" name="pwd" [(ngModel)]="credentials.pwd" required>
+  </mat-form-field>
+  <button type="submit" mat-raised-button color="primary" [disabled]="!form.valid">Submit</button>
+</form>

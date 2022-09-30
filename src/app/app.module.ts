@@ -9,6 +9,9 @@ import { UIModule } from './modules/ui/ui.module';
 import { HomeComponent } from './pages/home/home.component';
 import { GetStartedComponent } from './pages/get-started/get-started.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { LoginComponent } from './pages/login/login.component';
+import { SharedModule } from './modules/shared/shared.module';
+import { HttpClientModule } from '@angular/common/http';
 
 const PIPES = [
   ExponentialStrengthPipe
@@ -21,12 +24,14 @@ const PIPES = [
     HomeComponent,
     GetStartedComponent,
     NotFoundComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    UIModule
+    HttpClientModule,
+    SharedModule    
   ],
   exports: [],
   providers: [],

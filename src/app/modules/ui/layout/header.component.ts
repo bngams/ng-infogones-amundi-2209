@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -19,13 +20,22 @@ import { Component, OnInit } from '@angular/core';
           <li class="menu-item"><a [routerLink]="['/home']" routerLinkActive="active">Home</a></li>
           <li class="menu-item"><a routerLink="/get-started" routerLinkActive="active">Get Started</a></li>
           <li class="menu-item"><a routerLink="/products" routerLinkActive="active">Products</a></li>
+          <li class="menu-item" *ngIf="authService.isLoggedIn">
+            <a routerLink="/admin" routerLinkActive="active">Admin</a>
+          </li>
           <li class="menu-item"><a routerLink="/cart" routerLinkActive="active">Cart</a></li>
+          <li class="menu-item" *ngIf="!authService.isLoggedIn">
+            <a routerLink="/login" routerLinkActive="active">
+              <mat-icon aria-hidden="false" aria-label="login" fontIcon="login">login</mat-icon>
+            </a>
+          </li>
+          <li class="menu-item" *ngIf="authService.isLoggedIn">
+            <a href="#">
+              <mat-icon aria-hidden="false" aria-label="login" fontIcon="logout">logout</mat-icon>
+            </a>
+          </li>
         </ul>
-      </nav>
-      <!-- iconne login -->
-      <mat-icon aria-hidden="false" aria-label="login" fontIcon="login">login</mat-icon>
-      <!-- iconne logout -->
-      <mat-icon aria-hidden="false" aria-label="logout" fontIcon="login">logout</mat-icon>
+      </nav>      
     </mat-toolbar>
   `,
   styles: [`
@@ -56,7 +66,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(readonly authService: AuthService) { }
 
   ngOnInit(): void {
   }

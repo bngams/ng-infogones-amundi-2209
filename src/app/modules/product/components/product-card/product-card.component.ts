@@ -10,7 +10,7 @@ export class ProductCardComponent implements OnInit {
 
   @Input()
   product!: Product;
-  // product: Product = {} as Product;
+  //product: Product = {} as Product;
 
   // @ContentChild()
   imageContent!: any;

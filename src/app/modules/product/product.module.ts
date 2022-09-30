@@ -6,7 +6,7 @@ import { ProductCardComponent } from './components/product-card/product-card.com
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { ProductFormComponent } from './components/product-form/product-form.component';
 import { ProductDashboardComponent } from './pages/product-dashboard/product-dashboard.component';
-import { UIModule } from '../ui/ui.module';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -19,7 +19,7 @@ import { UIModule } from '../ui/ui.module';
   imports: [
     CommonModule,
     ProductRoutingModule, 
-    UIModule
+    SharedModule
   ]
 })
 export class ProductModule { }
